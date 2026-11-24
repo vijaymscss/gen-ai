@@ -4,7 +4,7 @@ students = [
 
 
 
-def getGrade(marks):
+def get_grade(marks):
     if (marks >= 90 and marks <= 100):
         return "A"
     elif (marks >= 80 and marks <= 89):
@@ -17,7 +17,7 @@ def getGrade(marks):
         return "E"
 
 
-def displayDetails():
+def show_results():
     
     average=0
     highest=0
@@ -34,7 +34,7 @@ def displayDetails():
     print(f"{'Name':<15} {'Marks':<10} {'Grade':<10}")
     
     for student in students:
-        grade = getGrade(student["marks"])
+        grade = get_grade(student["marks"])
         print(
             f"{student['name']:<15} "
             f"{student['marks']:<10} "
@@ -56,7 +56,7 @@ def displayDetails():
     print(f"Lowest marks: {lowest}")
     
     
-def addStudent():
+def add_student():
     name = input("Enter student name: ").strip()
     if not name:
         print("Name cannot be empty")
@@ -90,9 +90,9 @@ while(True):
 
     choice = input("Enter your choice: ")
     if(choice == "1"):
-        displayDetails()
+        show_results()
     elif(choice == "2"):
-        addStudent()
+        add_student()
     elif(choice == "3"):
         break
     else:
